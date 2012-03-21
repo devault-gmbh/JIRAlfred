@@ -12,15 +12,16 @@ Installation
 
 To install JIRAlfred in Alfred double click on the extension file.
 
-You then need to set your server URL and credentials in the *jira.sh* script which is located in */Users/YOURNAME/Library/Application Support/Alfred/extensions/applescripts/JIRA/jira.sh*.
-As it's downloaded from the internet OS X will probably ask you to authorize it first.
+You then need to create a bash script containing your JIRA URL and credentials. For this copy the script located at *~/Library/Application Support/Alfred/extensions/applescripts/JIRA/jira-sample.sh*, rename it to *jira.sh* and move it up one level in the folder structure. Then fill it out with your JIRA information as in the example below.
 
     #!/bin/bash
-    # Comments
-    # - Customize for your installation, for instance you might want to add default parameters like the following:
-    java -jar `dirname $0`/lib/jira-cli-2.5.0.jar --server http://my-server --user myUserName --password myPassword "$@"
+    # Copy this file to ~/Library/Application Support/Alfred/extensions/applescripts/jira.sh
+    # - Customize for your JIRA installation, for instance you might want to add default parameters like the following:
+    java -jar `dirname $0`/JIRA/lib/jira-cli-2.5.0.jar --server http://my-server --user myUsername --password myPassword "$@"
 
-It's a bit dodgy as it will be overwritten when you update the extension, but i'll work on that.
+Finally you should have a script configured for your JIRA instance located at *~/Library/Application Support/Alfred/extensions/applescripts/jira.sh* CHMODed correctly.
+
+The reason for moving this file out of the extension folder, is that by doing it the [Extension Updater from David Ferguson](http://jdfwarrior.tumblr.com/updater) can be supported for this extension without the need of recreating the *jira.sh* script.
 
 How to use
 --------------
@@ -46,6 +47,12 @@ Here you go: [JIRAlfred](https://raw.github.com/devault-gmbh/Alfred-Ext/master/J
 
 Version History
 --------------------
+### 1.1 - March 21, 2012
+ 
+- Validation
+- Fixed some bugs
+- Support for updates
+
 ### 1.0 - March 21, 2012
  
 - Initial commit
