@@ -1,4 +1,0 @@
-1.0 
-Added ability to add comments to an issue in JIRA
-Added ability to log work on an issue in JIRA
-Added compatibility for update extension
