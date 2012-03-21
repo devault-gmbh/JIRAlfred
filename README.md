@@ -1,7 +1,7 @@
 JIRA for Alfred
 ============
 
-This is an extension for [Alfred App](http://www.atlassian.com/software/jira), which let's you send basic commands to an Atlassian JIRA instance. 
+This is an extension for [Alfred App](http://www.alfredapp.com), which let's you send basic commands to an [Atlassian JIRA](http://www.atlassian.com/software/jira) instance. 
 The extension contains the [JIRA Command Line Interface](https://studio.plugins.atlassian.com/wiki/display/JCLI/JIRA+Command+Line+Interface) by Bob Swift to communicate with JIRA.
 You will need Alfred and the Powerpack to use this.
 
