@@ -29,16 +29,28 @@ How to use
 Once installed, you can run the following commands, for examples look below.
 
 
+    # Comments
     jira comment issuekey comment
+    jira c issuekey comment
+
+    # Log work
     jira log issuekey comment #timeSpent
+    jira l issuekey comment #timeSpent
+
+    # Help
     jira help
+    jira ?
         
 
 Examples
 ----------------
-    $ jira comment JIRALFRED-4 That's an amazing issue! 
-    $ jira log JIRALFRED-2 Look boss, i crafted an extension #3h 15m
-    $ jira log JIRALFRED-3 #30m
+    # Comments
+    $ jira comment JIRALFRED-4 We got issues..
+    $ jira c DRAGON-1 Thou shall be prepared, i got a two handed sword now.
+
+    # Log work
+    $ jira log JIRALFRED-2 Look Alfred, i crafted an extension #3h 15m
+    $ jira l DRAGON-1 Eat this! #30m
         
 Download
 ----------------
