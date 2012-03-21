@@ -10,9 +10,9 @@ Now take me to the [download](https://raw.github.com/devault-gmbh/Alfred-Ext/mas
 Installation
 ----------------
 
-To install JIRAlfred in Alfred double click on the extension file.
+To install JIRAlfred, double click on the extension file or drag it into the preferences pane.
 
-You then need to create a bash script containing your JIRA URL and credentials. For this copy the script located at *~/Library/Application Support/Alfred/extensions/applescripts/JIRA/jira-sample.sh*, rename it to *jira.sh* and move it up one level in the folder structure. Then fill it out with your JIRA information as in the example below.
+You then need to create a bash script containing your JIRA URL and credentials. For doing this, copy the script located at *~/Library/Application Support/Alfred/extensions/applescripts/JIRA/jira-sample.sh*, rename it to *jira.sh* and move it up one level in the folder structure. Then fill in your JIRA information as in the example below.
 
     #!/bin/bash
     # Copy this file to ~/Library/Application Support/Alfred/extensions/applescripts/jira.sh
@@ -22,6 +22,8 @@ You then need to create a bash script containing your JIRA URL and credentials. 
 Finally you should have a script configured for your JIRA instance located at *~/Library/Application Support/Alfred/extensions/applescripts/jira.sh* CHMODed correctly.
 
 The reason for moving this file out of the extension folder, is that by doing it the [Extension Updater from David Ferguson](http://jdfwarrior.tumblr.com/updater) can be supported for this extension without the need of recreating the *jira.sh* script.
+
+**Note: The current updater only updates script-extensions and no applescripts or other type of extensions. There exists a pull request with a working script, so in order to use the updater for this extension please replace the script.php file in the Extension+Updater with [that one](https://raw.github.com/tresni/Extension-Updater/451f63a268718637734dbf1534d0dc81bb6afdfd/script.php).**
 
 How to use
 --------------
