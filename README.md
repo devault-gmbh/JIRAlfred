@@ -5,7 +5,7 @@ This is an extension for [Alfred App](http://www.alfredapp.com), which let's you
 The extension contains the [JIRA Command Line Interface](https://studio.plugins.atlassian.com/wiki/display/JCLI/JIRA+Command+Line+Interface) by Bob Swift to communicate with JIRA.
 You will need [Alfred](http://www.alfredapp.com/#download-alfred) and the [Powerpack](http://www.alfredapp.com/purchase) to use this.
 
-Now take me to the [download](https://github.com/devault-gmbh/Alfred-Ext/blob/master/JIRA.alfredextension) already!
+Now take me to the [download](https://raw.github.com/devault-gmbh/Alfred-Ext/master/JIRA.alfredextension) already!
 
 Installation
 ----------------
@@ -40,7 +40,7 @@ Examples
         
 Download
 ----------------
-Here you go: [JIRAlfred](https://github.com/devault-gmbh/Alfred-Ext/blob/master/JIRA.alfredextension)
+Here you go: [JIRAlfred](https://raw.github.com/devault-gmbh/Alfred-Ext/master/JIRA.alfredextension)
     
 
 Version History
