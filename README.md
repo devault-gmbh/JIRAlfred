@@ -19,7 +19,7 @@ You then need to set your server URL and credentials in the *jira.sh* script whi
     # - Customize for your installation, for instance you might want to add default parameters like the following:
     java -jar `dirname $0`/lib/jira-cli-2.5.0.jar --server http://my-server --user myUserName --password myPassword "$@"
 
-True that, it's a bit dodgy and will fuck up your extension when you update the extension, but i'll work on that!
+It's a bit dodgy as it will be overwritten when you update the extension, but i'll work on that.
 
 How to use
 --------------
