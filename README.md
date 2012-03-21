@@ -12,7 +12,8 @@ Installation
 
 To install JIRAlfred in Alfred double click on the extension file.
 
-You then need to set your server URL and credentials in the *jira.sh* script which is located in */Users/YOURNAME/Library/Application Support/Alfred/extensions/applescripts/JIRA/jira.sh*
+You then need to set your server URL and credentials in the *jira.sh* script which is located in */Users/YOURNAME/Library/Application Support/Alfred/extensions/applescripts/JIRA/jira.sh*.
+As it's downloaded from the internet OS X will probably ask you to authorize it first.
 
     #!/bin/bash
     # Comments
