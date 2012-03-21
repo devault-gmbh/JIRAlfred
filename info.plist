@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>background</key>
+	<true/>
+	<key>category</key>
+	<string>APPLESCRIPTS</string>
+	<key>command</key>
+	<string>on alfred_script(query)		set jira to "jira.sh "	set growlTitle to "JIRAlfred"	set errorTitle to "JIRAlfred Error"		# Command Hashes	set logWork to {"l", "log", "work"}	set comment to {"c", "comment"}	set h to {"help", "?"}		set theWords to my split(item 1 of query, space)	set command to item 1 of theWords		# Comment on an issue.	# Usage: jira comment ISSUE-4 my comment	if command is in comment then		try			set issueKey to item 2 of theWords			set comment to my join(the rest of theWords, space)			set scriptResult to do shell script jira &amp; "--action addComment --issue " &amp; issueKey &amp; " --comment " &amp; quote &amp; comment &amp; quote		on error errMsg			set scriptResult to "Error: " &amp; errMsg		end try		if scriptResult contains "error" then			set theTitle to errorTitle		else			set theTitle to growlTitle &amp; space &amp; issueKey		end if		my growl(theTitle, scriptResult)				# Log work on an issue.		# Usage: log TROMMELEVENTS-4 my comment #3h 40"	else if command is in logWork then		try			set hashSplit to my split(item 1 of query, "#")			set issueComment to my split(item 1 of hashSplit, space)			set timeSpent to item 2 of hashSplit			set cmd to item 1 of issueComment			set issueKey to item 2 of issueComment			set comment to my join(the rest of issueComment, space)						set logWorkScript to jira &amp; " --action addWork --issue " &amp; issueKey &amp; " --timeSpent " &amp; quote &amp; timeSpent &amp; quote &amp; " --comment " &amp; quote &amp; comment &amp; quote			set scriptResult to do shell script logWorkScript		on error errMsg			set scriptResult to "Error: " &amp; errMsg		end try				if scriptResult contains "error" then			set theTitle to errorTitle		else			set theTitle to growlTitle		end if		my growl(theTitle, scriptResult)		# Help	else if command is in h then		open location "https://github.com/devault-gmbh/JIRAlfred/blob/master/README.md"	else		my growl(growlTitle, "Say what? I didn't got that command!")	end if	end alfred_script# Helperson growl(theTitle, theDescription)	tell application "System Events" to set GrowlRunning to exists application process "GrowlHelperApp"		if GrowlRunning then		tell application "GrowlHelperApp"			set the allNotificationsList to {"AlfredExt-Jira"}			set the enabledNotificationsList to {"AlfredExt-Jira"}						register as application ¬				"AlfredExt-Jira" all notifications allNotificationsList ¬				default notifications enabledNotificationsList ¬				icon of application "Alfred"						notify with name ¬				"AlfredExt-Jira" title ¬				theTitle description ¬				theDescription application name "AlfredExt-Jira"					end tell	end ifend growlto join(aList, delimiter)	set retVal to ""	set prevDelimiter to AppleScript's text item delimiters	set AppleScript's text item delimiters to delimiter	set retVal to aList as string	set AppleScript's text item delimiters to prevDelimiter	return retValend jointo split(aString, delimiter)	set retVal to {}	set prevDelimiter to AppleScript's text item delimiters	log delimiter	set AppleScript's text item delimiters to {delimiter}	set retVal to every text item of aString	set AppleScript's text item delimiters to prevDelimiter	return retValend splitto trim(someText)	repeat until someText does not start with " "		set someText to text 2 thru -1 of someText	end repeat		repeat until someText does not end with " "		set someText to text 1 thru -2 of someText	end repeat	return someTextend trim</string>
+	<key>disabled</key>
+	<false/>
+	<key>keyword</key>
+	<string>jira</string>
+	<key>parameter</key>
+	<integer>2</integer>
+	<key>subtitle</key>
+	<string>Log work/comment issues in JIRA</string>
+	<key>title</key>
+	<string>JIRA for Alfred</string>
+</dict>
+</plist>
